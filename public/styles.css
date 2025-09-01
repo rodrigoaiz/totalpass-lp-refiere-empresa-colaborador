@@ -7,8 +7,10 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-slate-300: oklch(86.9% 0.022 252.894);
     --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-200: oklch(92.8% 0.006 264.531);
+    --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-gray-700: oklch(37.3% 0.034 259.733);
     --color-gray-800: oklch(27.8% 0.033 256.848);
@@ -55,6 +57,7 @@
     --color-primary-green: #00D177;
     --color-primary-black: #020202;
     --color-secondary-green-extradark: #00210F;
+    --color-secondary-green-dark: #043112;
     --color-secondary-green: #162a18;
     --color-secondary-green-mid: #16A05B;
     --color-secondary-green-light: #D2F6EC;
@@ -694,9 +697,26 @@ html {
       font-size: var(--text-sm);
       line-height: var(--tw-leading, var(--text-sm--line-height));
       text-wrap: pretty;
-      color: var(--color-gray-200);
+      color: var(--color-gray-100);
       @media (width >= 80rem) {
         margin-top: calc(var(--spacing) * 8);
+      }
+      a {
+        color: var(--color-gray-300);
+        text-underline-offset: 4px;
+        transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+        transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+        transition-duration: var(--tw-duration, var(--default-transition-duration));
+        &:hover {
+          @media (hover: hover) {
+            color: var(--color-secondary-green-dark);
+          }
+        }
+        &:hover {
+          @media (hover: hover) {
+            text-decoration-line: underline;
+          }
+        }
       }
     }
   }
@@ -947,13 +967,20 @@ html {
       margin-block: calc(var(--spacing) * 10);
     }
     h3 {
-      margin-block: calc(var(--spacing) * 18);
-      font-size: var(--text-4xl);
-      line-height: var(--tw-leading, var(--text-4xl--line-height));
+      margin-top: calc(var(--spacing) * 8);
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
       --tw-leading: var(--leading-normal);
       line-height: var(--leading-normal);
       --tw-font-weight: var(--font-weight-semibold);
       font-weight: var(--font-weight-semibold);
+      @media (width >= 80rem) {
+        margin-block: calc(var(--spacing) * 18);
+      }
+      @media (width >= 80rem) {
+        font-size: var(--text-4xl);
+        line-height: var(--tw-leading, var(--text-4xl--line-height));
+      }
     }
   }
   .partners-content {
