@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TotalPass - Refiere a tu empresa (Colaborador)</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script runat="server" src="scripts/form-post.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="hero-logo">
+          <img src="img/logos/totalpass.svg" alt="logo totalpass" />
+        </div>
+        <div class="hero-container">
+          <div class="hero-text">
+            <h2 class="hero-animate hero-title">Lleva TotalPass a tu<br /> empresa y accede a:</h2>
+            <div class="hero-copys-container">
+              <div class="hero-copy hero-animate hero-subtitle">
+                <article>
+                  <h3>+5,000</h3>
+                  <span>gimnasios, estudios y spas en todo México</span>
+                </article>
+                <article>
+                  <h3>&nbsp;</h3>
+                  <span>Todo en una sola app,<br /> <strong>por un solo pago mensual</strong></span>
+                </article>
+              </div>
+            </div>
+            <div class="hero-footer hero-animate hero-link">
+              <div class="hero-cta hero-animate hero-button">
+                <a href="#partners" class="btn-primary xl:btn-xl ">Descubrir más</a>
+              </div>
+            </div>
+          </div>
+          <div class="hero-form-container">
+            <aside class="hero-form hero-animate hero-form-slide" id="hero-form">
+              <h3>Completa el formulario</h3>
+              <div class="form-container">
+                <form method="POST">
+                  <div class="form-grid">
+                      <div>
+                          <label for="nombre_completo">Nombre completo</label>
+                          <input
+                              id="nombre_completo"
+                              name="nombre_completo"
+                              type="text"
+                              required
+                          >
+                      </div>
+                      <div>
+                          <label for="empresa">Empresa</label>
+                          <input
+                              id="empresa"
+                              name="empresa"
+                              type="text"
+                              required
+                          >
+                      </div>
+                  </div>
+                  <div class="form-grid">
+                      <div>
+                          <label for="email_corporativo">Email corporativo</label>
+                          <input
+                              id="email_corporativo"
+                              name="email_corporativo"
+                              type="email"
+                              required
+                          >
+                      </div>
+                      <div>
+                          <label for="telefono">Teléfono</label>
+                          <input
+                              id="telefono"
+                              name="telefono"
+                              type="tel"
+                              required
+                          >
+                      </div>
+                  </div>
+                  <div class="form-grid">
+                      <div>
+                          <label for="rol_actual">Rol actual en la organización*</label>
+                          <select id="rol_actual" name="rol_actual" required>
+                              <option value="" disabled selected>Selecciona</option>
+                              <option value="CEO">CEO</option>
+                              <option value="Socio">Socio</option>
+                              <option value="Director">Director</option>
+                              <option value="Analista">Analista</option>
+                              <option value="Gerente">Gerente</option>
+                          </select>
+                      </div>
+                      <div>
+                          <label for="total_colaboradores">Nº total de colaboradores en la empresa</label>
+                          <select id="total_colaboradores" name="total_colaboradores" required>
+                              <option value="" disabled selected>Selecciona</option>
+                              <option value="10-299">10-299</option>
+                              <option value="300-1499">300-1499</option>
+                              <option value="Mas-1500">Mas de 1500</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-grid">
+                      <div>
+                          <label for="codigo_postal">Código postal</label>
+                          <input
+                              id="codigo_postal"
+                              name="codigo_postal"
+                              type="text"
+                              required
+                          >
+                      </div>
+                      <div>
+                          <label for="presupuesto_asignado">¿Dispone de presupuesto asignado para la implementación del beneficio?</label>
+                          <select id="presupuesto_asignado" name="presupuesto_asignado" required>
+                              <option value="" disabled selected>Selecciona</option>
+                              <option value="si">Sí</option>
+                              <option value="no">No</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-grid">
+                      <div>
+                          <label for="tiempo_implementacion">Tiempo de implementación</label>
+                          <select id="tiempo_implementacion" name="tiempo_implementacion" required>
+                              <option value="" disabled selected>Selecciona</option>
+                              <option value="inmediato">Inmediato</option>
+                              <option value="menos-3_meses">Menos de 3 meses</option>
+                              <option value="mas-6_meses">Más de 6 meses</option>
+                          </select>
+                      </div>
+                      <div>
+                          <label for="estado">¿En qué estado se localiza la empresa?</label>
+                          <select id="estado" name="estado" required>
+                              <option value="" disabled selected>Selecciona un estado</option>
+                              <option value="AGS">Aguascalientes</option>
+                              <option value="BC">Baja California</option>
+                              <option value="BCS">Baja California Sur</option>
+                              <option value="CAM">Campeche</option>
+                              <option value="CHIS">Chiapas</option>
+                              <option value="CHI">Chihuahua</option>
+                              <option value="CDMX">Ciudad de México</option>
+                              <option value="COAH">Coahuila</option>
+                              <option value="COL">Colima</option>
+                              <option value="DUR">Durango</option>
+                              <option value="GTO">Guanajuato</option>
+                              <option value="GRO">Guerrero</option>
+                              <option value="HGO">Hidalgo</option>
+                              <option value="JAL">Jalisco</option>
+                              <option value="MEX">Estado de México</option>
+                              <option value="MICH">Michoacán</option>
+                              <option value="MOR">Morelos</option>
+                              <option value="NAY">Nayarit</option>
+                              <option value="NL">Nuevo León</option>
+                              <option value="OAX">Oaxaca</option>
+                              <option value="PUE">Puebla</option>
+                              <option value="QRO">Querétaro</option>
+                              <option value="QR">Quintana Roo</option>
+                              <option value="SLP">San Luis Potosí</option>
+                              <option value="SIN">Sinaloa</option>
+                              <option value="SON">Sonora</option>
+                              <option value="TAB">Tabasco</option>
+                              <option value="TAM">Tamaulipas</option>
+                              <option value="TLAX">Tlaxcala</option>
+                              <option value="VER">Veracruz</option>
+                              <option value="YUC">Yucatán</option>
+                              <option value="ZAC">Zacatecas</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-checkbox">
+                      <input
+                          id="acuerdo"
+                          name="acuerdo"
+                          type="checkbox"
+                          required
+                      >
+                      <label for="acuerdo">Comprendo que este beneficio corporativo está destinado a empresas y no a usuarios finales.</label>
+                  </div>
+                  <div class="form-grid">
+                    <div></div>
+                    <div class="form-button">
+                      <button class="btn-primary" type="submit">Enviar</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </aside>
+            <p>Este sitio Web no recopila ni almacena información personal sin su consentimiento expreso. La información de los contactos que proporcione se utilizará exclusivamente para responder a sus consultas o solicitudes; no se comparte con terceros sin su consentimiento previo. Para más información revise nuestro <a href="https://totalpass.com/mx/privacy/" target="_blank">Aviso de Privacidad</a>.</p>
+          </div>
+        </div>
+      </section>
+      <section id="partners" class="partners">
+        <div class="partners-logos scroll-animate animate-fade-scale">
+          <div class="scroll-animate animate-stagger animate-delay-100"><img src="img/logos/png/LP_logos_cocacola_1.png" alt="Coca Cola" /></div>
+          <div class="scroll-animate animate-stagger animate-delay-100"><img class="logos-delgados" src="img/logos/png/LP_logos_Bimbo_1.png" alt="Bimbo" /></div>
+          <div class="scroll-animate animate-stagger animate-delay-100"><img src="img/logos/png/LP_logos_cinemex_1.png" alt="Cinemex" /></div>
+          <div class="scroll-animate animate-stagger animate-delay-100"><img src="img/logos/png/LP_logos_manpower_1.png" alt="Manpower" /></div>
+          <div class="scroll-animate animate-stagger animate-delay-100"><img src="img/logos/png/LP_logos_Liverpool_1.png" alt="Liverpool" /></div>
+          <div class="scroll-animate animate-stagger animate-delay-100"><img class="logos-delgados" src="img/logos/png/LP_logosnubank_1.png" alt="Nubank" /></div>
+        </div>
+        <header id="partners-header" class="partners-header">
+          <h2 class="pill scroll-animate animate-fade-scale">¿Por qué unir tu empresa a TotalPass?</h2>
+        </header>
+        <article class="partners-info">
+          <div class="partners-lead">
+            <h3 class="scroll-animate animate-slide-right">Somos mucho más<br> que un beneficio corporativo.</h3>
+            <div class="divisor"></div>
+            <p class="scroll-animate animate-slide-left">Trabajamos todos los días para convertirnos en el aliado estratégico de líderes como tú</p>
+          </div>
+          <h4 class="partners-bento-title">Para las empresas:</h4>
+          <div class="partners-bento">
+            <article class="partners-bento-item scroll-animate animate-fade-scale animate-delay-200">
+              <img src="img/icons/icn-lock.svg" class="partners-bento-icon" alt="">
+              <h4>Reduce</h4>
+              <p>Gastos en recursos de salud, costos médicos y licencias</p>
+            </article>
+            <article class="partners-bento-item scroll-animate animate-fade-scale animate-delay-100">
+              <img src="img/icons/icn-trophy.svg" class="partners-bento-icon" alt="">
+              <h4>Incrementa</h4>
+              <p>La atracción y retención de talento</p>
+            </article>
+            <article class="partners-bento-item scroll-animate animate-fade-scale animate-delay-300">
+              <img src="img/icons/icn-pork.svg" class="partners-bento-icon" alt="">
+              <h4>Ahorra</h4>
+              <p>Es 100% deducible de impuestos</p>
+            </article>
+            <article class="partners-bento-item scroll-animate animate-fade-scale animate-delay-400">
+              <img src="img/icons/icn-star.svg" class="partners-bento-icon" alt="">
+              <h4>Más productividad</h4>
+              <p>Equipos más eficientes y comprometidos</p>
+            </article>
+          </div>
+          <h4 class="partners-bento-title">Para los colaboradores:</h4>
+          <div class="partners-bento">
+            <article class="partners-bento-item scroll-animate animate-fade-scale animate-delay-100">
+              <img src="img/icons/icn-mexico.svg" class="partners-bento-icon" alt="">
+              <h4>Cobertura nacional</h4>
+              <p>Acceso a +5,000 gimnasios, estudios y spas en todo México</p>
+            </article>
+            <article class="partners-bento-item scroll-animate animate-fade-scale animate-delay-200">
+              <img src="img/icons/icn-health.svg" class="partners-bento-icon" alt="">
+              <h4>Bienestar total</h4>
+              <p>Cuida su salud mental y nutricional con plataformas digitales</p>
+            </article>
+            <article class="partners-bento-item scroll-animate animate-fade-scale animate-delay-300">
+              <img src="img/icons/icn-person.svg" class="partners-bento-icon" alt="">
+              <h4>Beneficio extensible</h4>
+              <p>Pueden compartirlo con cualquier persona que elijan</p>
+            </article>
+            <article class="partners-bento-item scroll-animate animate-fade-scale animate-delay-400">
+              <img src="img/icons/icn-dollar.svg" class="partners-bento-icon" alt="">
+              <h4>Ingresos</h4>
+              <p>Aumenta tus ingresos al atraer nuevos clientes a través de nuestra red</p>
+            </article>
+          </div>
+        </article>
+        <footer class="partners-footer scroll-animate animate-slide-up">
+          <div>
+            <p>Reduce gastos incrementando la<br> retención de talento</p>
+          </div>
+          <div>
+            <a href="#what-is-contact" class="btn-primary btn-xl">Unir a mi empresa</a>
+          </div>
+        </footer>
+
+      </section>
+
+      <section class="what-is">
+        <header class="what-is-header scroll-animate animate-slide-up">
+          <h2 class="what-is-h2">¿Qué es TotalPass?</h2>
+        </header>
+        <div class="what-is-video scroll-animate animate-fade-scale">
+          <iframe class="aspect-video" src="https://www.youtube.com/embed/QgCXt57wnXk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="what-is-content">
+          <p class="what-is-lead mt-7 scroll-animate animate-slide-up">¿Cómo uno a mi empresa?</p>
+          <div class="what-is-steps">
+            <article class="what-is-step scroll-animate animate-fade-scale animate-delay-100">
+              <span class="what-is-number">1</span>
+              <p>Completa el formulario con tus datos.</p>
+            </article>
+            <article class="what-is-step scroll-animate animate-fade-scale animate-delay-200">
+              <span class="what-is-number">2</span>
+              <p>Un asesor te contactará para darte más información.</p>
+            </article>
+            <article class="what-is-step scroll-animate animate-fade-scale animate-delay-300">
+              <span class="what-is-number">3</span>
+              <p>¡Contrata y listo! Disfruten de su beneficio corporativo.</p>
+            </article>
+          </div>
+        </div>
+        <div id="what-is-contact" class="what-is-contact">
+          <div class="what-is-image">
+            <p class="what-is-lead scroll-animate animate-slide-up">Completa tus datos y comienza hoy mismo</p>
+            <div class="flex w-full pt-4 2xl:pt-8 scroll-animate animate-slide-left">
+              <img src="img/phone-2.webp" class="hidden md:block max-w-4/5" alt="What is TotalPass" />
+            </div>
+          </div>
+          <aside class="hero-form scroll-animate animate-slide-right">
+            <h3>Completa el formulario</h3>
+              <div class="form-container">
+                <form method="POST">
+                <div class="form-grid">
+                    <div>
+                        <label for="nombre_completo_2">Nombre completo</label>
+                        <input
+                            id="nombre_completo_2"
+                            name="nombre_completo"
+                            type="text"
+                            required
+                        >
+                    </div>
+                    <div>
+                        <label for="empresa_2">Empresa</label>
+                        <input
+                            id="empresa_2"
+                            name="empresa"
+                            type="text"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div>
+                        <label for="email_corporativo_2">Email corporativo</label>
+                        <input
+                            id="email_corporativo_2"
+                            name="email_corporativo"
+                            type="email"
+                            required
+                        >
+                    </div>
+                    <div>
+                        <label for="telefono_2">Teléfono</label>
+                        <input
+                            id="telefono_2"
+                            name="telefono"
+                            type="tel"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div>
+                        <label for="rol_actual_2">Rol actual en la organización*</label>
+                        <select id="rol_actual_2" name="rol_actual" required>
+                            <option value="" disabled selected>Selecciona</option>
+                            <option value="CEO">CEO</option>
+                            <option value="Socio">Socio</option>
+                            <option value="Director">Director</option>
+                            <option value="Analista">Analista</option>
+                            <option value="Gerente">Gerente</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="total_colaboradores_2">Nº total de colaboradores en la empresa</label>
+                        <select id="total_colaboradores_2" name="total_colaboradores" required>
+                            <option value="" disabled selected>Selecciona</option>
+                            <option value="10-299">10-299</option>
+                            <option value="300-1499">300-1499</option>
+                            <option value="Mas-1500">Mas de 1500</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div>
+                        <label for="codigo_postal_2">Código postal</label>
+                        <input
+                            id="codigo_postal_2"
+                            name="codigo_postal"
+                            type="text"
+                            required
+                        >
+                    </div>
+                    <div>
+                        <label for="presupuesto_asignado_2">¿Dispone de presupuesto asignado para la implementación del beneficio?</label>
+                        <select id="presupuesto_asignado_2" name="presupuesto_asignado" required>
+                            <option value="" disabled selected>Selecciona</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div>
+                        <label for="tiempo_implementacion_2">Tiempo de implementación</label>
+                        <select id="tiempo_implementacion_2" name="tiempo_implementacion" required>
+                            <option value="" disabled selected>Selecciona</option>
+                            <option value="inmediato">Inmediato</option>
+                            <option value="menos-3_meses">Menos de 3 meses</option>
+                            <option value="mas-6_meses">Más de 6 meses</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="estado_2">¿En qué estado se localiza la empresa?</label>
+                        <select id="estado_2" name="estado" required>
+                            <option value="" disabled selected>Selecciona un estado</option>
+                            <option value="AGS">Aguascalientes</option>
+                            <option value="BC">Baja California</option>
+                            <option value="BCS">Baja California Sur</option>
+                            <option value="CAM">Campeche</option>
+                            <option value="CHIS">Chiapas</option>
+                            <option value="CHI">Chihuahua</option>
+                            <option value="CDMX">Ciudad de México</option>
+                            <option value="COAH">Coahuila</option>
+                            <option value="COL">Colima</option>
+                            <option value="DUR">Durango</option>
+                            <option value="GTO">Guanajuato</option>
+                            <option value="GRO">Guerrero</option>
+                            <option value="HGO">Hidalgo</option>
+                            <option value="JAL">Jalisco</option>
+                            <option value="MEX">Estado de México</option>
+                            <option value="MICH">Michoacán</option>
+                            <option value="MOR">Morelos</option>
+                            <option value="NAY">Nayarit</option>
+                            <option value="NL">Nuevo León</option>
+                            <option value="OAX">Oaxaca</option>
+                            <option value="PUE">Puebla</option>
+                            <option value="QRO">Querétaro</option>
+                            <option value="QR">Quintana Roo</option>
+                            <option value="SLP">San Luis Potosí</option>
+                            <option value="SIN">Sinaloa</option>
+                            <option value="SON">Sonora</option>
+                            <option value="TAB">Tabasco</option>
+                            <option value="TAM">Tamaulipas</option>
+                            <option value="TLAX">Tlaxcala</option>
+                            <option value="VER">Veracruz</option>
+                            <option value="YUC">Yucatán</option>
+                            <option value="ZAC">Zacatecas</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-checkbox">
+                  <input id="acuerdo_2" name="acuerdo" type="checkbox" required>
+                  <label for="acuerdo_2">Comprendo que este beneficio corporativo está destinado a empresas y no a usuarios
+                    finales.</label>
+                </div>
+                <div class="form-grid">
+                  <div></div>
+                    <div class="form-button">
+                        <button class="btn-primary" type="submit">Enviar</button>
+                    </div>
+                </div>
+
+                
+              </form>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="success">
+        <header class="success-header">
+          <h2 class="pill scroll-animate animate-fade-scale">Casos de éxito</h2>
+          <h3 class="scroll-animate animate-slide-up">Lo que dicen las empresas que ya dieron el SÍ a TotalPass</h3>
+        </header>
+        <div class="success-cards">
+          <article class="success-item scroll-animate animate-fade-scale animate-delay-100">
+            <h4>Regina Villanueva</h4>
+            <h5>Employee Services Teleperformance</h5>
+            <p>"Con TotalPass logramos fomentar el engagement en nuestros colaboradores para la retención de talento: un beneficio de ejercicio nos ayuda a promover que el empleado se sienta a gusto y contento trabajando en el lugar en donde están."</p>
+          </article>
+          <article class="success-item scroll-animate animate-fade-scale animate-delay-200">
+            <h4>Evelyn Berumen</h4>
+            <h5>Employee Experience BBVA</h5>
+            <p>"TotalPass es un gran beneficio porque cuenta con más opciones de acondicionamiento físico que atraen a los colaboradores y así contribuye a la salud de los empleados y sus familias."</p>
+          </article>
+          <article class="success-item scroll-animate animate-fade-scale animate-delay-300">
+            <h4>Verónica Ramírez</h4>
+            <h5>Especialista en Beneficios AXA</h5>
+            <p>"Recomiendo TotalPass porque forma parte de los beneficios de la oferta de valor con los que apoyamos a lograr un mejor balance de vida-trabajo para los colaboradores y sus familiares, además de que complementa muy bien la estrategia de bienestar de la empresa."</p>
+          </article>
+        </div>
+        <div class="success-allies">
+          <h3 class="scroll-animate animate-slide-up">Nuestros aliados</h3>
+          <div class="success-allies-logos scroll-animate animate-fade-scale">
+            <div class="scroll-animate animate-stagger animate-delay-100">
+              <article><img src="img/logos/png/LP_logos_Bimbo_1.png"  alt="Bimbo" /></article>
+              <article><img src="img/logos/png/LP_logos_cocacola_1.png" alt="Coca Cola" /></article>
+              <article><img src="img/logos/png/LP_logos_cinemex_1.png" alt="Cinemex" /></article>
+               <article><img src="img/logos/png/LP_logos_manpower_1.png" alt="Manpower" /></article>
+               <article><img src="img/logos/png/LP_logos_Liverpool_1.png" alt="Liverpool" /></article>
+                <article><img src="img/logos/png/LP_logosnubank_1.png" alt="Nubank" /></article>
+
+
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="join-us scroll-animate animate-fade-scale">
+        <div class="scroll-animate animate-slide-right">
+          <h3>Prueba TotalPass.<br /> A tus colaboradores les va a encantar.</h3>
+        </div>
+        <div class="flex justify-center scroll-animate animate-slide-left"><a href="#partners" class="btn btn-primary btn-xl ">Unirme ahora</a></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo scroll-animate animate-slide-up">
+          <img src="img/logos/totalpass.svg" alt="logo totalpass" />
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/TotalPassMX" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/icn-facebook.svg" alt="Facebook TotalPass" />
+            </a>
+            <a href="https://www.instagram.com/totalpassmx/" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/icn-instagram.svg" alt="Instagram TotalPass" />
+            </a>
+            <a href="https://www.linkedin.com/company/totalpassmx/" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/icn-linkedin.svg" alt="LinkedIn TotalPass" />
+            </a>
+            <a href="https://www.youtube.com/@TotalPassMX" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/icn-youtube.svg" alt="YouTube TotalPass" />
+            </a>
+            <a href="https://www.tiktok.com/@TotalPassMX" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/icn-tiktok.svg" alt="Tiktok TotalPass" />
+            </a>
+          </div>
+        </div>
+        <div class="footer-links scroll-animate animate-slide-up animate-delay-100">
+          <ul>
+            <li><a href="#">Sobre TotalPass</a></li>
+            <li><a href="#">Para Empresas</a></li>
+            <li><a href="#">Para aliados</a></li>
+            <li><a href="#">Colaboradores</a></li>
+            <li><a href="#">Busca gimnasios</a></li>
+          </ul>
+          <div class="footer-links-bottom">
+            <a href="#">Quiénes somos</a>
+            <a href="#">Blog</a>
+            <a href="#">Ayuda</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-app scroll-animate animate-slide-up animate-delay-200">
+        <p>Descarga nuestra aplicación</p>
+        <div class="footer-app-links">
+          <a href="https://apps.apple.com/mx/app/totalpass-mx/id1508708850" target="_blank" rel="noopener noreferrer">
+            <img src="img/icons/icn-app-store.svg" alt="App Store TotalPass" />
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.totalpass.app&hl=es_MX&gl=US" target="_blank" rel="noopener noreferrer">
+            <img src="img/icons/icn-google-play.svg" alt="Google Play TotalPass" />
+          </a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+
+        <a href="#">Términos y condiciones</a></p>
+        <p><a href="#">Aviso de privacidad</a>
+      </div>
+    </footer>
+  </body>
+  <script src="scripts/focus-form.js"></script>
+  <script src="scripts/scroll-animations.js"></script>
+  <script src="scripts/cookie-alert.js"></script>
+</html>
