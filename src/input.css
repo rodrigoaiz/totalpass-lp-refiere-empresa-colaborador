@@ -6,13 +6,19 @@
   --color-primary-black: #020202;
   --color-secondary-green-extradark: #00210F;
   --color-secondary-green-dark: #043112;
-  --color-secondary-green: #0a3516;
+  --color-secondary-green: #162a18;
   --color-secondary-green-mid: #16A05B;
   --color-secondary-green-light: #D2F6EC;
   --color-secondary-purple-dark: #27025B;
   --color-secondary-purple-light: #F1DDFF;
   --color-secondary-blue-dark: ##113A6B;
   --color-secondary-blue-light: #A8DCFF;
+  --color-gradients-base: #16261e;
+  --color-gradients-green: #0a7544;
+  --color-gradients-purple: #685481;
+  --color-gradients-violet: #7f546b;
+
+
   --font-poppins: Poppins, sans-serif;
   --font-oswald: "Oswald Variable", sans-serif;
 }
@@ -104,7 +110,7 @@ html {
   }
   /* Hero */
   .hero {
-    @apply bg-gradient-to-b from-secondary-green-extradark to-secondary-green-dark from-70%  text-white h-full 2xl:h-dvh flex flex-col pb-10 2xl:pb-0;
+    @apply bg-gradient-to-b from-secondary-green-extradark to-secondary-green-mid from-60%  text-white h-full 2xl:h-dvh flex flex-col pb-10 2xl:pb-0;
   }
   .hero-logo {
     @apply w-full absolute xl:relative top-1 xl:top-5 left-0 px-5 lg:px-0 py-5 lg:max-w-11/12 2xl:max-w-4/5 h-1/12 flex items-end justify-center xl:justify-start mx-auto;
@@ -161,12 +167,26 @@ html {
     }
   }
   .form-grid {
-      @apply md:grid grid-cols-2 gap-x-10;
+      @apply flex flex-col md:grid grid-cols-2 gap-x-10;
+      
+      /* En desktop, hacer que cada div hijo use flexbox para alinear elementos */
+      @media (min-width: 768px) {
+        > div {
+          @apply flex flex-col justify-end;
+        }
+      }
+      
       input, textarea, select {
          @apply w-full px-4 py-2 bg-gray-200 mt-1 mb-4 md:mb-6 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-green text-[0.75rem];
        }
        label {
          @apply block text-base md:text-sm font-medium text-gray-700;
+         
+         /* En desktop, altura mínima para mantener alineación */
+         @media (min-width: 768px) {
+           min-height: 2.5rem;
+           @apply flex items-end;
+         }
        }
        button {
         @apply my-2
@@ -175,7 +195,50 @@ html {
         @apply flex items-center justify-center xl:items-end;
        }
     }
-
+  .whats-bento{
+    @apply bg-secondary-green text-white py-12 md:py-22;
+  }
+  .whats-bento-container {
+    @apply max-w-7xl mx-auto;
+    h2 {
+      @apply text-3xl font-semibold;
+    }
+  }
+  .whats-bento-cards {
+    @apply grid grid-cols-1 sm:grid-cols-3 gap-10 my-10;
+    article {
+      @apply p-4 rounded-2xl bg-gradient-to-b from-gradients-base to-gradients-green from-10% py-8 px-10 xl:py-18 xl:px-22 flex flex-col gap-y-8;
+      h3 {
+        @apply text-2xl uppercase mb-5 font-semibold text-center;
+      }
+      span{
+        @apply text-3xl font-bold leading-tight;
+      }
+      p {
+        @apply text-xl font-light;
+        strong {
+          @apply font-semibold;
+        }
+      }
+    }
+  }
+  .whats-bento-card-1{
+    h3 {
+      @apply text-primary-green;
+    }
+  }
+  .whats-bento-card-2{
+    @apply !to-gradients-purple;
+    h3 {
+      @apply text-[#e3b0ff];
+    }
+  }
+  .whats-bento-card-3{
+    @apply !to-gradients-violet;
+    h3 {
+      @apply text-[#f4afe8];
+    }
+  }
   /* Partners */
   .partners {
     @apply my-10 md:pt-10;
@@ -208,6 +271,9 @@ html {
   }
   .partners-header {
     @apply max-w-7xl mx-auto mt-5 mb-6 md:my-10;
+    h3{
+      @apply text-4xl font-semibold my-18 leading-normal;
+    }
   }
   .partners-content{
     @apply col-span-3 md:col-span-2 flex flex-col justify-center gap-y-10;
@@ -284,7 +350,7 @@ html {
   }
 
   .what-is-content{
-    @apply max-w-7xl mx-auto xl:mt-24;
+    @apply max-w-7xl mx-auto;
 
   }
   .what-is-contact{

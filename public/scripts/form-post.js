@@ -3,31 +3,36 @@
   try {
     var submitted = Request.Method == "POST";
     if (submitted) {
-      // Campos del formulario de empresas
-      var nombreCompleto = Request.GetFormField("nombre_completo");
+      // Campos del formulario de empresas actualizados
       var empresa = Request.GetFormField("empresa");
-      var emailCorporativo = Request.GetFormField("email_corporativo");
       var telefono = Request.GetFormField("telefono");
-      var rolActual = Request.GetFormField("rol_actual");
       var totalColaboradores = Request.GetFormField("total_colaboradores");
-      var codigoPostal = Request.GetFormField("codigo_postal");
-      var presupuestoAsignado = Request.GetFormField("presupuesto_asignado");
-      var tiempoImplementacion = Request.GetFormField("tiempo_implementacion");
+      var posicionCargo = Request.GetFormField("posicion_cargo");
       var estado = Request.GetFormField("estado");
+      var posicionCargoOtro = Request.GetFormField("posicion_cargo_otro");
+      var nombreEncargado = Request.GetFormField("nombre_encargado");
+      var quienRefiere = Request.GetFormField("quien_refiere");
+      var emailCorporativo = Request.GetFormField("email_corporativo");
+      var captcha = Request.GetFormField("captcha");
       var acuerdo = Request.GetFormField("acuerdo");
+
+      // Validar CAPTCHA
+      if (captcha != "8") {
+        Write("<p style='color:red; font-weight:bold;'>❌ Por favor, resuelve correctamente la operación matemática.</p>");
+        return;
+      }
 
       var insertDE = DataExtension.Init("Empresas_Interesadas_Form");
       insertDE.Rows.Add({
-        "nombreCompleto": nombreCompleto,
         "empresa": empresa,
-        "emailCorporativo": emailCorporativo,
         "telefono": telefono,
-        "rolActual": rolActual,
         "totalColaboradores": totalColaboradores,
-        "codigoPostal": codigoPostal,
-        "presupuestoAsignado": presupuestoAsignado,
-        "tiempoImplementacion": tiempoImplementacion,
+        "posicionCargo": posicionCargo,
         "estado": estado,
+        "posicionCargoOtro": posicionCargoOtro,
+        "nombreEncargado": nombreEncargado,
+        "quienRefiere": quienRefiere,
+        "emailCorporativo": emailCorporativo,
         "acuerdo": acuerdo
       });
 
